@@ -1,0 +1,31 @@
+
+.acct{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+}
+.cartout{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+}
+.carticon {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: red; /* Change this to your preferred color */
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+  .input-group .form-control{
+    box-shadow: none !important;
+  }

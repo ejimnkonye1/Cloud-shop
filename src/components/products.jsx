@@ -47,6 +47,7 @@ const navigate = useNavigate()
           ))}
         </div>
         <NewsLetter />
+        
       </div>
     )
 }

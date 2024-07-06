@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
 import { AiOutlineDelete } from "react-icons/ai";
 import { FiPlus, FiMinus } from 'react-icons/fi';
-
+import { useNavigate } from 'react-router-dom';
  export const Cart = ({ cartItem, setCartItem }) => {
+    const navigate = useNavigate();
+    const handlecheckout = () => {
+        navigate('/checkout')
+    }
   useEffect(() => {
     const storeditem = JSON.parse(localStorage.getItem('cartItem')) || [];
     setCartItem(storeditem);
@@ -49,8 +53,16 @@ const calculateTotalPrice = () => {
   return totalPrice;
 };
   return (
-    <section className="h-100 gradient-custom">
-      <div className="container py-5">
+    <div className='container'>
+   <nav style={{ '--bs-breadcrumb-divider': "'>'" }} className='mt-3' aria-label="breadcrumb">
+  <ol className="breadcrumb">
+    <li className="breadcrumb-item text-reset"><p href="#">Home</p></li>
+    <li className="breadcrumb-item active" aria-current="page">My shopping cart</li>
+  </ol>
+</nav>
+
+<section className="h-100 gradient-custom">
+      <div className="container py-1">
         <div className="row d-flex justify-content-center my-4">
           <div className="col-md-8">
           <div className="card mb-4">
@@ -160,7 +172,9 @@ const calculateTotalPrice = () => {
                   </li>
                 </ul>
                 <hr></hr>
-                <button type="button" className="btn btn-sm btn-outline-success btn-lg btn-block w-100 mb-3" >
+                <button type="button" 
+                onClick={handlecheckout}
+                className="btn btn-sm btn-outline-success btn-lg btn-block w-100 mb-3" >
                   Go to checkout
                 </button>
                 <button type="button" className="btn btn-sm btn-outline-success btn-lg btn-block w-100" >
@@ -172,6 +186,8 @@ const calculateTotalPrice = () => {
         </div>
       </div>
     </section>
+    </div>
+   
   );
 };
 
