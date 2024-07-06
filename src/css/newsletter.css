@@ -1,0 +1,38 @@
+.newsletter {
+    padding: 80px 0;
+    /* background: #19beda; */
+    }
+    
+    .newsletter .content {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2; }
+   .newsletter .content p{
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+   
+
+   }
+    .newsletter .content .form-control {
+    height: 50px;
+  
+    border: 1px solid #FF5C00;
+    border-radius:0;
+    box-shadow: none;
+    }
+    .newsletter .content.form-control:focus {
+    box-shadow: none;
+
+    }
+    .newsletter .content .btn {
+    min-height: 50px; 
+    border-radius:0;
+    background: #FF5C00;
+    font-weight:500; 
+    color: #000000;
+    font: Poppins;
+    }
