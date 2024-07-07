@@ -1,34 +1,26 @@
 import React from "react";
 import '../css/header1.css'
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Navbar, Nav, Container } from 'react-bootstrap';
+
 export const HeaderOne = () => {
     return(
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container">
-    <a class="navbar-brand logo" href="#">HILZELLA</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarNav">
-      <ul class="navbar-nav ml-4 nav-css">
-        <li class="nav-item">
-          <a class="nav-link activ" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Shop</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact us</a>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
+      <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#" className="logo">HILZELLA</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav">
+          <GiHamburgerMenu />
+        </Navbar.Toggle>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto nav-css">
+            <Nav.Link href="#" className="nav-link activ">Home</Nav.Link>
+            <Nav.Link href="#" className="nav-link">About</Nav.Link>
+            <Nav.Link href="#" className="nav-link">Blog</Nav.Link>
+            <Nav.Link href="#" className="nav-link">Shop</Nav.Link>
+            <Nav.Link href="#" className="nav-link">Contact us</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     )
 }

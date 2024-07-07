@@ -29,3 +29,8 @@
   .input-group .form-control{
     box-shadow: none !important;
   }
+  @media (max-width:1000){
+    /* .contai{
+      display: none !important;
+    } */
+  }

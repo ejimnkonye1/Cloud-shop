@@ -9,7 +9,7 @@ export const HeaderTwo = () => {
   
     return(
 <div className="contai" style={{backgroundColor:'#FF5C00 '}}>
-<nav class="navbar navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg d-none d-sm-none d-lg-block">
         <div class="container">
       
         <div className="dropdown navbar-brand">
