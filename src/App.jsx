@@ -9,12 +9,16 @@ import { Footer } from './components/Footer'
 import { Cart } from './components/cart'
 import { HeaderTwo } from './components/Header2'
 import { Checkout } from './components/checkout'
+import { HeaderOne } from './components/header1'
+import { HomeImg } from './components/home'
 const App = () => {
   const [cartItem,setCartItem] = useState([]) 
   return(
     <div>
  <Router>
+  <HeaderOne />
   <HeaderTwo />
+  {/* <HomeImg /> */}
       <Routes>
         
         <Route path='/' element={<Products cartItem={cartItem} setCartItem={setCartItem} />} />

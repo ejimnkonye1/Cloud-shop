@@ -7,6 +7,9 @@ import { useNavigate } from 'react-router-dom';
     const handlecheckout = () => {
         navigate('/checkout')
     }
+    const handlegoshop = () => {
+      navigate('/')
+  }
   useEffect(() => {
     const storeditem = JSON.parse(localStorage.getItem('cartItem')) || [];
     setCartItem(storeditem);
@@ -51,6 +54,16 @@ const calculateTotalPrice = () => {
     totalPrice += parseFloat(item.price) * item.quantity;
   }
   return totalPrice;
+};
+const calculateTotalFinalPrice = () => {
+  let totalPrice = 0;
+  for (const item of cartItem) {
+    // Assuming each item has a "price" property and considering quantity
+    totalPrice += parseFloat(item.price) * item.quantity;
+  }
+ let delivery = 20
+ const price = totalPrice + delivery
+ return price
 };
   return (
     <div className='container'>
@@ -105,14 +118,14 @@ const calculateTotalPrice = () => {
         <div className="col-lg-9 col-md-12">
           <div className="row">
             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-            <div className="d-flex align-items-center mb-2 border" style={{width:'120px'}}>
-  <div className="border px-3 bg-body-tertiary" onClick={() => updateQuantity(index, -1)}>
+            <div className="d-flex align-items-center mb-2 border" style={{width:'120px', cursor:'pointer'}}>
+  <div className="border px-3 bg-body-tertiary p-1" onClick={() => updateQuantity(index, -1)}>
     <FiMinus />
   </div>
   <div className="form-outline text-center" style={{ flex: '1' }}>
     <strong>{item.quantity}</strong>
   </div>
-  <div className="border px-3 bg-body-tertiary" onClick={() => updateQuantity(index, 1)} style={{ marginLeft: 'auto' }}>
+  <div className="border px-3 bg-body-tertiary p-1" onClick={() => updateQuantity(index, 1)} style={{ marginLeft: 'auto' }}>
     <FiPlus />
   </div>
 </div>
@@ -121,21 +134,21 @@ const calculateTotalPrice = () => {
             </div>
 
             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-              <p className="text-start text-md-center text-danger">
-                <strong>Price ₦{item.price}</strong>
+              <p className="text-start text-md-center text-yellow" style={{color:' #FF5C00'}}>
+                <strong>${item.price}</strong>
               </p>
             </div>
 
             <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <p className="text-start text-md-center text-danger">
-                <strong>Total: ₦{calculateUpdatedPrice(item)}</strong>
+              <p className="text-start text-md-center text-tertiary">
+                <strong>${calculateUpdatedPrice(item)}</strong>
               </p>
             </div>
 
             <div className="col-lg-1 col-md-6 mb-4 mb-lg-0">
-              <button type="button" className="btn btn-outline-danger btn-sm me-1 mb-2" onClick={() => handleRemoveFromCart(index)}>
-                <AiOutlineDelete />
-              </button>
+
+                <AiOutlineDelete onClick={() => handleRemoveFromCart(index)} />
+            
             </div>
           </div>
         </div>
@@ -151,35 +164,68 @@ const calculateTotalPrice = () => {
           <div className="col-md-4">
             <div className="card mb-4">
               <div className="card-header py-3">
-                <h5 className="mb-0">Summary</h5>
+                <h5 className="mb-0">Cart Summary</h5>
               </div>
               <div className="card-body">
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                    Products
-                    <span></span>
+                    Subtotal
+                    <span>${calculateTotalPrice()}</span>
                   </li> 
                   <li className="list-group-item d-flex justify-content-between align-items-center px-0">
-                    Shipping
-                    <span>Gratis</span>
+                    Delivery charges
+                    <span>$20</span>
                   </li> 
                   <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                     <div>
                       <strong>Total amount</strong>
                       
                     </div>
-                    <span><strong>{calculateTotalPrice()}</strong></span>
+                    <span><strong>${calculateTotalFinalPrice()}</strong></span>
                   </li>
                 </ul>
                 <hr></hr>
-                <button type="button" 
+                <div className="d-flex justify-content-between">
+          
+            <button
+                type="button"
+                style={{
+                    width: '48%', /* Adjusted width to accommodate space */
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textAlign: 'center',
+                    color:'#FF5C00',
+                    backgroundColor:'#000000'
+                }}
+                onClick={handlegoshop}
+                className="btn btn-sm btn-lg btn-block mb-3"
+            >
+                Continue shopping
+            </button>
+            <button
+                type="button"
                 onClick={handlecheckout}
-                className="btn btn-sm btn-outline-success btn-lg btn-block w-100 mb-3" >
-                  Go to checkout
-                </button>
-                <button type="button" className="btn btn-sm btn-outline-success btn-lg btn-block w-100" >
-                  Continue shopping
-                </button>
+                style={{
+                    width: '48%', /* Adjusted width to accommodate space */
+                    backgroundColor: '#FF5C00',
+                    color: 'white',
+                    padding: '20px',
+                    height: '40px', /* Adjusted height value */
+                    borderRadius: '5px', /* Optional: Rounded corners */
+                    border: 'none', /* Optional: Remove border */
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textAlign: 'center'
+                }}
+                className="btn btn-sm btn-lg btn-block mb-3"
+            >
+                Go to checkout
+            </button>
+        </div>
+
+
               </div>
             </div>
           </div>

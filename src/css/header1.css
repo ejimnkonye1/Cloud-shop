@@ -1,0 +1,17 @@
+.logo{
+    font-family: Poppins;
+font-size: 25px;
+font-style: italic;
+font-weight: 800;
+/* line-height: 67.5px; */
+text-align: left;
+
+}
+.nav-css li {
+    font-family: Poppins;
+font-size: 21px;
+font-weight: 600;
+/* line-height: 48px; */
+text-align: left;
+margin-left: 90px;
+}

@@ -3,36 +3,51 @@ import { VscAccount } from "react-icons/vsc";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
 import '../css/header2.css'
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+
 export const HeaderTwo = () => {
+  
     return(
 <div className="contai" style={{backgroundColor:'#FF5C00 '}}>
 <nav class="navbar navbar-expand-lg ">
         <div class="container">
       
-        <div class="dropdown   navbar-brand">
+        <div className="dropdown navbar-brand">
+            <Dropdown>
+                <Dropdown.Toggle as="div" className="custom-dropdown-toggle">
+                    <button className="btn btn-dark" type="button">
+                        <GiHamburgerMenu /> Categories
+                    </button>
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu className="mt-2">
+                    <Dropdown.Item href="#" className="border-bottom">Smart wristwatch</Dropdown.Item>
+                    <Dropdown.Item href="#" className="phone border-bottom">Phones and Tablets</Dropdown.Item>
+                    <Dropdown.Item href="#" className="border-bottom">Computers</Dropdown.Item>
+                    <Dropdown.Item href="#" className="border-bottom">Fashion</Dropdown.Item>
+                    <Dropdown.Item href="#"className="border-bottom">Footwears</Dropdown.Item>
+                    <Dropdown.Item href="#"className="border-bottom">Jewelry</Dropdown.Item>
+                    <Dropdown.Item href="#"className="border-bottom">Accessories</Dropdown.Item>
+                    <Dropdown.Item href="#"className="border-bottom">Furniture</Dropdown.Item>
+                    <Dropdown.Item href="#">Beauty</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        </div> 
       
-  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <GiHamburgerMenu /> Categories
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-          
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <form className="d-flex align-items-center">
   <div className="input-group">
     <span className="input-group-text">
       <CiSearch />
     </span>
-    <input type="search" className="form-control border-0" placeholder="Enter your keyword" aria-label="Search" />
+    <input type="search"
+    style={{width:'400px'}}
+    className="form-control border-0" placeholder="Enter your keyword" aria-label="Search" />
+    <button className="btn btn-dark" type="submit">Search</button>
   </div>
-  <button className="btn btn-outline-dark" type="submit">Search</button>
+
 </form>
 
 

@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom"
+import { FiPlus, FiMinus } from 'react-icons/fi';
+import img from '../assets/images/Card.png'
 export const Checkout = () => {
+    const navigate  = useNavigate()
+    const onsubmit = () => {
+        alert('payment successful check ur email for your order details')
+        // navigate('/')
+    }
     return(
         <div className="container mt-5 mb-4">
                <nav style={{ '--bs-breadcrumb-divider': "'>'" }} className='mt-3' aria-label="breadcrumb">
@@ -7,7 +15,7 @@ export const Checkout = () => {
     <li className="breadcrumb-item active" aria-current="page">Checkout</li>
   </ol>
 </nav>
-        <form>
+        <form onsubmit={onsubmit}>
      
         <div className="mb-3">
         <label htmlFor="country" className="form-label">Country</label>
@@ -56,21 +64,27 @@ export const Checkout = () => {
             <label htmlFor="paymentMethod" className="form-label">Payment Method</label>
            <h6>Credit/Debit card</h6>
            <div className="input-group ">
-           <button className="btn btn-secondary p-2 " type="button" id="applyGiftCard"></button>
-           <input type="text" className="form-control" id="pay" placeholder="+1 (567)" required />
+           <button className="btn btn-secondary p-2 " type="button" id="applyGiftCard"> <img src={img} width={'20px'} height={'20px'} /></button>
+           <input type="text" className="form-control" id="pay" placeholder="**** **** **** 9947" required />
            </div>
           </div>
           <div className="mb-3 " style={{ width: '30%' }}>
           <label htmlFor="giftCard" className="form-label">Gift Card</label>
           <div className="input-group">
-        
-            <input type="text" className="form-control" id="giftCard" placeholder="+1 (567)" />
-            <button className="btn btn-outline-secondary" type="button" id="applyGiftCard">Apply</button>
+          <button className="btn btn-secondary p-2 " type="button" id="applyGiftCard"> <FiPlus /></button>
+            <input type="text" className="form-control" id="giftCard" placeholder="YN007" />
+            <button
+            style={{color:'#FF5C00', backgroundColor:'#000000'}}
+            className="btn" type="button"
+            
+            id="applyGiftCard">Apply</button>
           </div>
         </div>
        <div className="d-flex justify-content-center">
         
-       <button type="submit" className="btn btn-primary">Payment</button>
+       <button type="submit" 
+       style={{backgroundColor:'#FF5C00', color:"white"}}
+       className="btn ">Payment</button>
        </div>
         </form>
       </div>
