@@ -1,0 +1,7 @@
+{
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/cart", "status": 301, "headers": { "Location": "https://cloud-shop-dev-vs-des-war.vercel.app/cart" } }
+    ]
+  }
+  
