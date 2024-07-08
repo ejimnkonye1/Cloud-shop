@@ -64,82 +64,55 @@ export const Cart = () => {
       <section className="h-100 gradient-custom">
         <div className="container py-1">
           <div className="row d-flex justify-content-center my-4">
-            <div className="col-md-8">
-              <div className="card mb-4">
-                <div className="card-header py-3">
-                  <div className='row'>
-                    <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                      <div className="d-flex align-items-center justify-content-between mb-2">
-                        <h6>Items details</h6>
-                      </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 mb-4 mb-lg-0 d-none d-sm-none d-lg-block">
-                      <div className="d-flex align-items-center mb-2 d-none d-sm-none d-lg-block">
-                        <h6>Quantity</h6>
-                      </div>
-                    </div>
-                    <div className="col-lg-2 col-md-6 mb-4 mb-lg-0 d-none d-sm-none d-lg-block">
-                      <div className="d-flex align-items-center mb-2 d-none d-sm-none d-lg-block">
-                        <h6>Price</h6>
-                      </div>
-                    </div>
-                    <div className="col-lg-3 col-md-6 mb-4 mb-lg-0 d-none d-sm-none d-lg-block">
-                      <div className="d-flex align-items-center mb-2">
-                        <h6>Total Price</h6>
-                      </div>
-                    </div>
+          <div className="col-md-8">
+  <div className="card mb-4">
+    <div className="card-header py-3">
+      <h6>Cart Items</h6>
+    </div>
+    <div className="card-body">
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total Price</th>
+            <th className='act'>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {CartItems.map((item, index) => (
+            <tr key={index}>
+              <td>
+                <img src={item.image} alt={item.name} width="50px" height="50px" />
+              </td>
+              <td>{item.name}</td>
+              <td>
+                <div className="d-flex align-items-center mb-2 border" style={{ width: '120px', cursor: 'pointer' }}>
+                  <div className="border px-3 bg-body-tertiary p-1">
+                    <FiMinus />
+                  </div>
+                  <div className="form-outline text-center" style={{ flex: '1' }}>
+                    <strong>{item.quantity}</strong>
+                  </div>
+                  <div className="border px-3 bg-body-tertiary p-1">
+                    <FiPlus />
                   </div>
                 </div>
-                <div className="card-body">
-  {CartItems.map((item, index) => (
-    <div key={index} className="row align-items-center mb-4">
-      <div className="col-3 col-lg-3 col-md-12 mb-4 mb-lg-0">
-        <div className="bg-image hover-overlay hover-zoom ripple rounded d-flex align-items-center">
-          <img src={item.image} className="" alt={item.name} width={'100px'} height={""} />
-          <span className='mt-1 mb-5 ms-3'><strong>{item.name}</strong></span>
-        </div>
-      </div>
-    
-      <div className="col-9 col-lg-9 col-md-12">
-        <div className="row align-items-center justify-content-between " >
-          <div className="col-3 col-lg-4 col-md-6 mb-2 mb-lg-0 ">
-            <div className="d-flex align-items-center mb-2 border" style={{ width: '120px', cursor: 'pointer' }}>
-              <div className="border px-3 bg-body-tertiary p-1">
-                <FiMinus />
-              </div>
-              <div className="form-outline text-center" style={{ flex: '1' }}>
-                <strong>{item.quantity}</strong>
-              </div>
-              <div className="border px-3 bg-body-tertiary p-1">
-                <FiPlus />
-              </div>
-            </div>
-          </div>
-    
-          <div className="col-4 col-lg-3 col-md-6 mb-2 mb-lg-0 me-0 ">
-            <p className="text-start text-md-center text-yellow mt-" style={{ color: ' #FF5C00' }}>
-              <strong>${item.price}</strong>
-            </p>
-          </div>
-    
-          <div className="col-3 col-lg-4 col-md-6 mb-2 mb-lg-0">
-            <p className="text-start text-md-center text-tertiary">
-              <strong>${calculateUpdatedPrice(item)}</strong>
-            </p>
-          </div>
-    
-          <div className="col-2 col-lg-1 col-md-6 mb-5 mb-lg-0 d-flex align-items-center justify-content-center">
-            <AiOutlineDelete />
-          </div>
-        </div>
-      </div>
+              </td>
+              <td>${item.price}</td>
+              <td>${calculateUpdatedPrice(item)}</td>
+              <td>
+                <AiOutlineDelete />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-  ))}
+  </div>
 </div>
-
-
-              </div>
-            </div>
 
             <div className="col-md-4">
               <div className="card mb-4">

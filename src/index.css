@@ -85,3 +85,11 @@ body{
     width: 100%;
   }
 }
+@media (max-width: 768px) {
+  .table td:nth-child(6) {
+    display: none;
+  }
+  .table  .act {
+    display:  none;
+  }
+}
