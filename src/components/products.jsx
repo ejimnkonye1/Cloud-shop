@@ -5,8 +5,13 @@ import img from '../assets/images/stock.png';
 import { Phone } from './phone';
 import { Tablet } from './tablet';
 import { HomeImg } from './home';
-
+import { useNavigate } from 'react-router-dom';
 export const Products = () => {
+  const navigate = useNavigate()
+
+  const handleCartPage = () => {
+    navigate('/cart')
+  }
   return (
     <section>
       <div className='d-none d-lg-block'>
@@ -30,7 +35,9 @@ export const Products = () => {
                   </h6>
                   <p className="card-text text-dark text-center">${product.price}</p>
                   <div className='d-flex justify-content-center'>
-                    <button className='cart-button btn-sm rounded btn btn-dark' disabled>
+                    <button
+                        onClick={handleCartPage}
+                    className='cart-button btn-sm rounded btn btn-dark' >
                       Add to cart
                     </button>
                   </div>

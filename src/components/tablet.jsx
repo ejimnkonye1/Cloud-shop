@@ -1,8 +1,13 @@
 import React from 'react';
 import img from '../assets/images/stock.png';
 import tabletImg from './tabletimg';
-
+import { useNavigate } from 'react-router-dom';
 export const Tablet = () => {
+  const navigate = useNavigate()
+
+  const handleCartPage = () => {
+    navigate('/cart')
+  }
   return (
     <div className="container">
       <h6 className='mt-4 mb-4'>Tablets</h6>
@@ -22,7 +27,9 @@ export const Tablet = () => {
                 </h6>
                 <p className="card-text text-dark text-center">${product.price}</p>
                 <div className='d-flex justify-content-center'>
-                  <button className='btn-sm rounded btn btn-dark' disabled>
+                  <button
+                  onClick={handleCartPage}
+                  className='btn-sm rounded btn btn-dark' >
                     Add to cart
                   </button>
                 </div>
