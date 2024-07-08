@@ -18,7 +18,7 @@ const CartItems = [
     id: 2,
     name: 'Tablet',
     image: img2,
-    price: 299.99,
+    price: 300,
     quantity: 2
   }
 ];
@@ -36,7 +36,7 @@ export const Cart = () => {
   };
 
   const calculateUpdatedPrice = (item) => {
-    return (parseFloat(item.price) * item.quantity).toFixed(2);
+    return (parseFloat(item.price) * item.quantity).toFixed(0);
   };
 
   const calculateTotalPrice = () => {
@@ -44,13 +44,13 @@ export const Cart = () => {
     for (const item of CartItems) {
       totalPrice += parseFloat(item.price) * item.quantity;
     }
-    return totalPrice.toFixed(2);
+    return totalPrice.toFixed(0);
   };
 
   const calculateTotalFinalPrice = () => {
     let totalPrice = calculateTotalPrice();
     const deliveryCharge = 20;
-    return (parseFloat(totalPrice) + deliveryCharge).toFixed(2);
+    return (parseFloat(totalPrice) + deliveryCharge).toFixed(0);
   };
 
   return (
@@ -102,8 +102,8 @@ export const Cart = () => {
                   </div>
                 </div>
               </td>
-              <td>${item.price}</td>
-              <td>${calculateUpdatedPrice(item)}</td>
+              <td style={{color:'#FF5C00 '}}>${item.price}</td>
+              <td className='text-tertiary'>${calculateUpdatedPrice(item)}</td>
               <td>
                 <AiOutlineDelete />
               </td>
@@ -151,10 +151,11 @@ export const Cart = () => {
               color: '#FF5C00',
               height:'40px',
               backgroundColor: '#000000',
-               whiteSpace: 'nowrap'
+              whiteSpace: 'nowrap'
+
             }}
              onClick={handleGoShop}
-             className="btn btn-sm btn-block mb-3"
+             className="btn btn-sm btn-block continue mb-3"
              >
             Continue shopping
            </button>
@@ -176,7 +177,7 @@ export const Cart = () => {
           textAlign: 'center',
           whiteSpace: 'nowrap'
         }}
-           className="btn btn-sm btn-block mb-3"
+           className="btn btn-sm btn-block checkout mb-3"
           >
           Go to checkout
          </button>

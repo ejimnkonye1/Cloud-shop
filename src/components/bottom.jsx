@@ -3,6 +3,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { FiMessageSquare } from "react-icons/fi";
 import { IoHomeOutline } from "react-icons/io5";
 import img from '../assets/images/bi.jpg'
+import { Link } from 'react-router-dom';
 export const Bottom = () => {
     return(
    
@@ -23,8 +24,10 @@ export const Bottom = () => {
           </div>
           <div className="col-3 text-center">
           <div className="carticon ">
+          <Link to='/cart'>
           <IoCartOutline  className="cartout"/>
-          <span className="count">3</span>
+          <span className="count">2</span>
+          </Link>
           </div>
           </div>
         

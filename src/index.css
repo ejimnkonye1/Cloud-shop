@@ -84,6 +84,8 @@ text-align: left;
   /* .it{
     padding: none ;
   } */
+ 
+
 }
 
 .phone-only-bg {
@@ -96,9 +98,13 @@ text-align: left;
   border-radius: 20px;
 }
 
-/* Show the background image only on phone screens */
+
 @media only screen and (max-width: 767px) {
  .phone-only-bg {
     display: block;
   }
+}
+a {
+  text-decoration: none !important;
+  color: inherit !important;
 }

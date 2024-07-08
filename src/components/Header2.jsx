@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
 import '../css/header2.css'
 import { Dropdown, DropdownButton } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 export const HeaderTwo = () => {
   
     return(
@@ -18,7 +18,7 @@ export const HeaderTwo = () => {
   <button className="btn btn-dark" type="button">
     <GiHamburgerMenu /> Categories
   </button>
-</Dropdown.Toggle>
+   </Dropdown.Toggle>
 
                 <Dropdown.Menu className="mt-2">
                     <Dropdown.Item href="#" className="border-bottom">Smart wristwatch</Dropdown.Item>
@@ -59,8 +59,10 @@ export const HeaderTwo = () => {
           <div  className="d-flex ">
             <VscAccount className="acct me-5" />
           <div className="carticon ">
-          <IoCartOutline  className="cartout"/>
+            <Link to='/cart'>
+            <IoCartOutline  className="cartout"/>
           <span className="count">2</span>
+          </Link>
           </div>
           
 
