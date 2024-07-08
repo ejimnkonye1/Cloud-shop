@@ -75,9 +75,9 @@ export const Cart = () => {
           <tr>
             <th>Image</th>
             <th>Item Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total Price</th>
+            <th className='quantity'>Quantity</th>
+            <th className='act'>Price</th>
+            <th className=''>Total Price</th>
             <th className='act'>Action</th>
           </tr>
         </thead>
@@ -87,7 +87,7 @@ export const Cart = () => {
               <td>
                 <img src={item.image} alt={item.name} width="50px" height="50px" />
               </td>
-              <td>{item.name}</td>
+              <td>{item.name} <span className='x2'>x2</span></td> 
               <td>
                 <div className="d-flex align-items-center mb-2 border" style={{ width: '120px', cursor: 'pointer' }}>
                   <div className="border px-3 bg-body-tertiary p-1">
@@ -137,44 +137,49 @@ export const Cart = () => {
                     </li>
                   </ul>
                   <hr></hr>
-                  <div className="d-flex justify-content-between">
-                    <button
-                      type="button"
-                      style={{
-                        width: '48%', /* Adjusted width to accommodate space */
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        textAlign: 'center',
-                        color: '#FF5C00',
-                        backgroundColor: '#000000'
-                      }}
-                      onClick={handleGoShop}
-                      className="btn btn-sm btn-lg btn-block mb-3"
-                    >
-                      Continue shopping
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleCheckout}
-                      style={{
-                        width: '48%', /* Adjusted width to accommodate space */
-                        backgroundColor: '#FF5C00',
-                        color: 'white',
-                        padding: '20px',
-                        height: '40px', /* Adjusted height value */
-                        borderRadius: '5px', /* Optional: Rounded corners */
-                        border: 'none', /* Optional: Remove border */
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        textAlign: 'center'
-                      }}
-                      className="btn btn-sm btn-lg btn-block mb-3"
-                    >
-                      Go to checkout
-                    </button>
-                  </div>
+                  <div className="d-flex flex-wrap">
+               <button
+             type="button"
+             style={{
+              flex: '1 1 0', 
+              marginRight: '10px', 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              textAlign: 'center',
+              color: '#FF5C00',
+              height:'40px',
+              backgroundColor: '#000000',
+               whiteSpace: 'nowrap'
+            }}
+             onClick={handleGoShop}
+             className="btn btn-sm btn-block mb-3"
+             >
+            Continue shopping
+           </button>
+           <button
+          type="button"
+         onClick={handleCheckout}
+         style={{
+          flex: '1 1 0', 
+          marginLeft: '10px', 
+          backgroundColor: '#FF5C00',
+          color: 'white',
+          padding: '20px',
+          height: '40px', 
+          borderRadius: '5px', 
+          border: 'none', 
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          whiteSpace: 'nowrap'
+        }}
+           className="btn btn-sm btn-block mb-3"
+          >
+          Go to checkout
+         </button>
+</div>
                 </div>
               </div>
             </div>
