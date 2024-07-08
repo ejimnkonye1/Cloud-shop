@@ -6,6 +6,7 @@ import { Phone } from './phone';
 import { Tablet } from './tablet';
 import { HomeImg } from './home';
 import { useNavigate } from 'react-router-dom';
+import { Ads } from './ads';
 export const Products = () => {
   const navigate = useNavigate()
 
@@ -14,6 +15,7 @@ export const Products = () => {
   }
   return (
     <section>
+      <Ads />
       <div className='d-none d-lg-block'>
         <HomeImg />
       </div>

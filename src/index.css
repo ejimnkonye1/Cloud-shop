@@ -1,3 +1,6 @@
+body{
+  font-style: Poppins !important;
+}
 a{
   text-decoration: none !important;
 }
@@ -12,10 +15,15 @@ font-weight: 500;
 text-align: left;
 
 }
-body{
-  font-style: Poppins !important;
-}
 
+
+.circle-image{
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+
+}
 @media (max-width: 576px) {
   .cart-button{
     /* display: none !important; */
@@ -44,7 +52,9 @@ body{
 .x2{
   display: none;
 }
-
+/* .it{
+  padding: 21px ;
+} */
 @media (max-width: 768px) {
   .table td:nth-child(6) {
     display: none;
@@ -55,6 +65,7 @@ body{
   .table td:nth-child(4) {
     display: none;
   }
+  
   .table  .act {
     display:  none;
   }
@@ -63,5 +74,31 @@ body{
   }
   .x2{
     display: inline-block;
+  }
+  #giftCard, #paymentMethod{
+    width: 80% !important;
+  }
+  .apply{
+    display: none !important;
+  }
+  /* .it{
+    padding: none ;
+  } */
+}
+
+.phone-only-bg {
+  background-image: url('./assets/images/ads.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100px; 
+  width: 100%; 
+  display: none; 
+  border-radius: 20px;
+}
+
+/* Show the background image only on phone screens */
+@media only screen and (max-width: 767px) {
+ .phone-only-bg {
+    display: block;
   }
 }

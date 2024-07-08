@@ -11,6 +11,8 @@ import { HeaderTwo } from './components/Header2'
 import { Checkout } from './components/checkout'
 import { HeaderOne } from './components/header1'
 import { HomeImg } from './components/home'
+import { Bottom } from './components/bottom'
+import { Ads } from './components/ads'
 const App = () => {
   const [cartItem,setCartItem] = useState([]) 
   return(
@@ -18,6 +20,7 @@ const App = () => {
  <Router>
   <HeaderOne />
   <HeaderTwo />
+  {/* <Ads /> */}
   {/* <HomeImg /> */}
       <Routes>
         
@@ -26,6 +29,7 @@ const App = () => {
         <Route path='/checkout' element={<Checkout/>} />
       </Routes>
       <Footer />
+      <Bottom />
     </Router>
     </div>
   )

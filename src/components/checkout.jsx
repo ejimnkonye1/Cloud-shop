@@ -60,7 +60,7 @@ export const Checkout = () => {
           <input type="checkbox" className="form-check-input" id="defaultAddress" />
           <label className="form-check-label" htmlFor="defaultAddress">Mark as default address</label>
         </div>
-          <div className="mb-3" style={{ width: '30%' }}>
+          <div className="mb-3" id="paymentMethod" style={{ width: '30%' }}>
             <label htmlFor="paymentMethod" className="form-label">Payment Method</label>
            <h6>Credit/Debit card</h6>
            <div className="input-group ">
@@ -68,16 +68,16 @@ export const Checkout = () => {
            <input type="text" className="form-control" id="pay" placeholder="**** **** **** 9947" required />
            </div>
           </div>
-          <div className="mb-3 " style={{ width: '30%' }}>
+          <div className="mb-3 " id="giftCard" style={{ width: '30%' }}>
           <label htmlFor="giftCard" className="form-label">Gift Card</label>
           <div className="input-group">
           <button className="btn btn-secondary p-2 " type="button" id="applyGiftCard"> <FiPlus /></button>
             <input type="text" className="form-control" id="giftCard" placeholder="YN007" />
             <button
             style={{color:'#FF5C00', backgroundColor:'#000000'}}
-            className="btn" type="button"
+            className="btn apply" type="button"
             
-            id="applyGiftCard">Apply</button>
+            id="applyGiftCard" >Apply</button>
           </div>
         </div>
        <div className="d-flex justify-content-center">

@@ -14,11 +14,11 @@ export const HeaderTwo = () => {
       
         <div className="dropdown navbar-brand">
             <Dropdown>
-                <Dropdown.Toggle as="div" className="custom-dropdown-toggle">
-                    <button className="btn btn-dark" type="button">
-                        <GiHamburgerMenu /> Categories
-                    </button>
-                </Dropdown.Toggle>
+            <Dropdown.Toggle as="div" className="custom-dropdown-toggle nocaret">
+  <button className="btn btn-dark" type="button">
+    <GiHamburgerMenu /> Categories
+  </button>
+</Dropdown.Toggle>
 
                 <Dropdown.Menu className="mt-2">
                     <Dropdown.Item href="#" className="border-bottom">Smart wristwatch</Dropdown.Item>
@@ -60,7 +60,7 @@ export const HeaderTwo = () => {
             <VscAccount className="acct me-5" />
           <div className="carticon ">
           <IoCartOutline  className="cartout"/>
-          <span className="count">0</span>
+          <span className="count">2</span>
           </div>
           
 

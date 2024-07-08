@@ -29,8 +29,10 @@
   .input-group .form-control{
     box-shadow: none !important;
   }
-  @media (max-width:1000){
-    /* .contai{
-      display: none !important;
-    } */
+  .custom-dropdown-toggle::before {
+    display: none !important;
   }
+  .nocaret::after {
+    display: none !important;
+  }
+  
