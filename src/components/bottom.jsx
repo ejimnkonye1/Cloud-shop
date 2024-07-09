@@ -11,7 +11,9 @@ export const Bottom = () => {
       <div className="container-fluid">
         <div className="row w-100 justify-content-around">
           <div className="col-3 text-center">
+          <Link to='/'>
             <IoHomeOutline  size={24} />
+            </Link>
           </div>
           <div className="col-3 text-center">
             <div className='circle-image'>

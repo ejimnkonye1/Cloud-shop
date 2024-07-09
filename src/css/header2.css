@@ -19,8 +19,9 @@
   .count {
     position: absolute;
     top: -5px;
-    right: -8px;
-    background-color: red; /* Change this to your preferred color */
+    /* right: -8px; */
+    left: -8px;
+    background-color: green; 
     color: white;
     border-radius: 50%;
     padding: 4px 8px;

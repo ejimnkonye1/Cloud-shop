@@ -47,25 +47,39 @@ text-align: left;
     font-size: 15px;
   }
 }
-
+.btn-checkout{
+  background-color: #FF5C00 !important;
+}
+.shopping{
+  color: #FF5C00 !important;
+}
 
 .x2{
   display: none;
+}
+.pro{
+  position: relative;
+}
+.indicator-badge {
+  position: absolute;
+  top: 10%;
+  right: 60%;
+  z-index: 1;
 }
 /* .it{
   padding: 21px ;
 } */
 @media (max-width: 768px) {
-  .table td:nth-child(6) {
+  .table td:nth-child(5) {
+    display: none;
+  }
+  .table td:nth-child(2) {
     display: none;
   }
   .table td:nth-child(3) {
     display: none;
   }
-  .table td:nth-child(4) {
-    display: none;
-  }
-  
+
   .table  .act {
     display:  none;
   }
@@ -85,7 +99,9 @@ text-align: left;
     padding: none ;
   } */
  
-
+.phone-search{
+  width: 160px !important;
+}
 }
 
 .phone-only-bg {

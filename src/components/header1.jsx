@@ -2,8 +2,10 @@ import React from "react";
 import '../css/header1.css'
 import { IoCartOutline } from "react-icons/io5";
 import { GiHamburgerMenu,  } from "react-icons/gi";
-import { Navbar, Nav, Container, FormControl, Form } from 'react-bootstrap';
+import { Navbar, Nav, Container, FormControl, Form,InputGroup,Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import logo from '../assets/images/logo.png'
+import { CiSearch } from "react-icons/ci";
 export const HeaderOne = () => {
     return(
       <Navbar bg="light" expand="lg">
@@ -11,10 +13,24 @@ export const HeaderOne = () => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" className="d-lg-none">
       <GiHamburgerMenu />
     </Navbar.Toggle>
-    <Navbar.Brand href="#" className="logo d-lg-block d-none">HILZELLA</Navbar.Brand>
-    <Form className="d-lg-none d-flex justify-content-center">
-      <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />
-    </Form>
+    <Navbar.Brand href="#" className="logo d-lg-block d-none">
+  <div className="logo-container">
+    <img src={logo} alt="Hilzella Logo" width="50" height="50" />
+    <span className="logo-text">HILZELLA</span>
+  </div>
+</Navbar.Brand>
+<Form className="d-lg-none d-flex justify-content-center">
+  <InputGroup>
+    <InputGroup.Text>
+      <CiSearch />
+    </InputGroup.Text>
+    <FormControl type="search"
+     placeholder="Enter keyword" 
+     className="me-2 phone-search" 
+    
+     aria-label="Search" />
+  </InputGroup>
+</Form>
     <Nav className="d-lg-none d-flex justify-content-end">
       <Nav.Link href="#" className="nav-link">
       <div className="carticon ">

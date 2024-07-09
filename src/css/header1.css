@@ -7,11 +7,28 @@ font-weight: 800;
 text-align: left;
 
 }
-.nav-css li {
+.nav-link  {
     font-family: Poppins;
-font-size: 21px;
-font-weight: 600;
+font-size: 24px;
+font-weight: 800;
 /* line-height: 48px; */
 text-align: left;
 margin-left: 90px;
 }
+.logo-container {
+    position: relative;
+  }
+  
+  .logo-text {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000; 
+  }
+  @media (max-width: 768px) {
+.nav-link {
+    margin-left: 0;
+    }
+  }
