@@ -13,11 +13,13 @@ import { HeaderOne } from './components/header1'
 import { HomeImg } from './components/home'
 import { Bottom } from './components/bottom'
 import { Ads } from './components/ads'
+import { BG } from './components/bg'
 const App = () => {
   const [cartItem,setCartItem] = useState([]) 
   return(
     <div>
  <Router>
+  <BG />
   <HeaderOne />
   <HeaderTwo />
   {/* <Ads /> */}

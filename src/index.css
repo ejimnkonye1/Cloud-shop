@@ -105,6 +105,9 @@ text-align: left;
 .sm-light{
   background-color: #FF5C00 !important;
 }
+.web-only-bg{
+  display: none !important;
+}
 }
 
 .phone-only-bg {
@@ -117,12 +120,23 @@ text-align: left;
   border-radius: 20px;
 }
 
+.web-only-bg {
+  background-image: url('./assets/images/bg.png');
+  background-size:cover;
+  background-position: center;
+  height: 60px; 
+  width: 100%; 
+ display: block;
+ 
+  
+}
 
 @media only screen and (max-width: 767px) {
  .phone-only-bg {
     display: block;
   }
 }
+
 a {
   text-decoration: none !important;
   color: inherit !important;
