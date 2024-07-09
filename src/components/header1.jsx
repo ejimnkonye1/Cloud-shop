@@ -8,7 +8,7 @@ import logo from '../assets/images/logo.png'
 import { CiSearch } from "react-icons/ci";
 export const HeaderOne = () => {
     return(
-      <Navbar bg="light" expand="lg">
+      <Navbar bg=" sm-light" expand="lg">
   <Container>
     <Navbar.Toggle aria-controls="basic-navbar-nav" className="d-lg-none">
       <GiHamburgerMenu />

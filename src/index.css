@@ -102,6 +102,9 @@ text-align: left;
 .phone-search{
   width: 160px !important;
 }
+.sm-light{
+  background-color: #FF5C00 !important;
+}
 }
 
 .phone-only-bg {
