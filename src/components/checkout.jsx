@@ -84,7 +84,7 @@ export const Checkout = () => {
         
        <button type="submit" 
        style={{backgroundColor:'#FF5C00', color:"white"}}
-       className="btn ">Payment</button>
+       className="btn mb-4 ">Payment</button>
        </div>
         </form>
       </div>

@@ -87,7 +87,7 @@ export const Cart = () => {
           <tr key={index}>
             <td>
               <img src={item.image} alt={item.name} width="50px" height="50px" />
-              <span style={{ marginLeft: '10px' }}>{item.name} <span className='x2'>x2</span></span>
+              <span style={{ marginLeft: '10px', color:"#817d7d" }}>{item.name} <span className='x2'>x2</span></span>
             </td>
             <td>
               <div className="d-flex align-items-center mb-2 border" style={{ width: '120px', cursor: 'pointer' }}>
@@ -109,8 +109,8 @@ export const Cart = () => {
              ${item.price}
  
          </td>
-            <td className='text-tertiary'>${calculateUpdatedPrice(item)}</td>
-            <td>
+            <td className='text-tertiary' style={{color:"#817d7d"}}>${calculateUpdatedPrice(item)}</td>
+            <td style={{color:"#817d7d"}}>
               <AiOutlineDelete />
             </td>
           </tr>
