@@ -5,15 +5,21 @@ import { CiSearch } from "react-icons/ci";
 import '../css/header2.css'
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useEffect , useState} from "react";
 export const HeaderTwo = () => {
-  
+  const [show, setShow] = useState(true);
+  useEffect(() => {
+   
+    setShow(true);
+  }, []);
     return(
+      
 <div className="contai" style={{backgroundColor:'#FF5C00 '}}>
 <nav class="navbar navbar-expand-lg d-none d-sm-none d-lg-block">
         <div class="container">
       
         <div className="dropdown navbar-brand">
-            <Dropdown>
+            <Dropdown show={show}>
             <Dropdown.Toggle as="div" className="custom-dropdown-toggle nocaret">
   <button className="btn btn-dark" type="button">
     <GiHamburgerMenu /> Categories

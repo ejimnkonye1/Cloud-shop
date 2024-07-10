@@ -15,6 +15,9 @@ font-weight: 500;
 text-align: left;
 
 }
+.main{
+  background: linear-gradient(to right, #FF5C00 50%, #FFFFFF 50%);
+}
 
 
 .circle-image{
