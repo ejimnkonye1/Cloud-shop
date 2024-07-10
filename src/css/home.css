@@ -10,13 +10,14 @@
     background-color: #f0f0f0;
     margin: 0;
     position: relative;
+    overflow: hidden;
 }
 
 .triangle {
     width: 0;
     height: 0;
     border-left: calc(7px * var(--scale)) solid transparent;
-    border-right: calc(70px * var(--scale)) solid transparent;
+    border-right: calc(90px * var(--scale)) solid transparent;
     border-bottom: calc(80px * var(--scale)) solid  #FF5C00;
     ;
     position: absolute;
@@ -37,9 +38,12 @@
     left: 80px;
 }
 .main img {
-    margin-left: -10px; /* Adjust this value to join the triangle and image together */
-    height: 560px;
+    margin-left: -30px; /* Adjust this value to join the triangle and image together */
+    /* height: 560px; */
+    width: 50vw;
+
 }
+
 .custom-dropdown-toggle::after {
     display: none;
 }

@@ -19,7 +19,7 @@ export const HeaderTwo = () => {
         <div class="container">
       
         <div className="dropdown navbar-brand">
-            <Dropdown show={show}>
+            <Dropdown >
             <Dropdown.Toggle as="div" className="custom-dropdown-toggle nocaret">
   <button className="btn btn-dark" type="button">
     <GiHamburgerMenu /> Categories

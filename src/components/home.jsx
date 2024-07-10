@@ -3,12 +3,12 @@ import '../css/home.css'
 import img from '../assets/images/home.png'
 export const HomeImg = () => {
     return(
-        <div className="main">
-    <div class="triangle">
+        <div className="main row">
+    <div class="triangle col-6">
     <span className="triangle-text">Phones <span className="tab">&  Tablets</span></span>
     </div>
-    <div>
-        <img src={img} />
+    <div className="col-6 im">
+        {/* <img src={img} style={{objectFit:'cover'}} /> */}
     </div>
     
         </div>

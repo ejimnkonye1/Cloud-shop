@@ -9,7 +9,7 @@ import img from '../assets/images/logo.png'
 export const Footer = () => {
     return(
        
-<footer class="text-center text-lg-start  bg-body-dark text-muted" style={{backgroundColor:'black',}}>
+<footer class="text-center text-lg-start footer  bg-body-dark text-muted" style={{backgroundColor:'black',}}>
 
   <section class="d-flex justify-content-center justify-content-lg-between p-4 ">
    
