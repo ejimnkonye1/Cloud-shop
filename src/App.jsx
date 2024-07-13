@@ -15,6 +15,7 @@ import { Bottom } from './components/bottom'
 import { Ads } from './components/ads'
 import { BG } from './components/bg'
 import Details from './components/productdetails'
+import ConfirmPayment from './components/confirm'
 const App = () => {
   const [cartItem,setCartItem] = useState([]) 
   return(
@@ -30,7 +31,9 @@ const App = () => {
         <Route path='/' element={<Products cartItem={cartItem} setCartItem={setCartItem} />} />
         <Route path='/cart' element={<Cart cartItem={cartItem} setCartItem={setCartItem} />} />
         <Route path='/checkout' element={<Checkout cartItem={cartItem} setCartItem={setCartItem}/>} />
-        <Route path='/details/:id' element={<Details />} />
+        <Route path='/details/:id' element={<Details cartItem={cartItem} setCartItem={setCartItem} />} />
+
+
       </Routes>
       <Footer />
       <Bottom cartItem={cartItem} />

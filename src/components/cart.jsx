@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom';
 
 
 export const Cart = ({cartItem,setCartItem}) => {
-  
-
   const navigate = useNavigate();
 
   const handleCheckout = () => {
@@ -22,13 +20,13 @@ export const Cart = ({cartItem,setCartItem}) => {
   };
 
   const calculateUpdatedPrice = (item) => {
-    return (parseFloat(item.price) * item.quantity).toFixed(0);
+    return (parseFloat(item.current_price[0].NGN[0]) * item.quantity).toFixed(0);
   };
 
   const calculateTotalPrice = () => {
     let totalPrice = 0;
     for (const item of cartItem) {
-      totalPrice += parseFloat(item.price) * item.quantity;
+      totalPrice += parseFloat(item.current_price[0].NGN[0]) * item.quantity;
     }
     return totalPrice.toFixed(0);
   };
@@ -48,14 +46,17 @@ export const Cart = ({cartItem,setCartItem}) => {
     }
     setCartItem(updatedCart);
   };
+
   const handleRemoveFromCart = (index) => {
     const updatedCartItems = [...cartItem];
     updatedCartItems.splice(index, 1);
     setCartItem(updatedCartItems);
   };
+
   const ClearCart = () => {
     setCartItem([]);
   };
+
   useEffect(() => {
     // Retrieve cart items from localStorage when the component mounts
     const storedCartItems = JSON.parse(localStorage.getItem('cartItem')) || [];
@@ -103,14 +104,15 @@ export const Cart = ({cartItem,setCartItem}) => {
                  <th className='quantity'>Quantity</th>
                  <th className='act'>Price</th>
                  <th className=''>Total Price</th>
-                 <th className='' onClick={() => ClearCart()}>Clear Cart</th>
+                 <th className='' onClick={() => ClearCart()} style={{cursor:"pointer"}}>Clear Cart</th>
                </tr>
              </thead>
              <tbody>
                {cartItem.map((item, index) => (
                  <tr key={index}>
                    <td>
-                     <img src={item.image} alt={item.name} width="50px" height="50px" />
+                 
+                   <img src={`/api/images/${item.photos[0]?.url}`} width="50px" height="50px" />
                      <span style={{ marginLeft: '10px', color: "#817d7d" }}>{item.name} <span className='x2'>x2</span></span>
                    </td>
                    <td>
@@ -127,11 +129,12 @@ export const Cart = ({cartItem,setCartItem}) => {
                      </div>
                    </td>
                    <td style={{ color: '#FF5C00' }}>
-                     ${item.price}
+                     $
+                     {item.current_price[0].NGN[0]}
                    </td>
                    <td className='text-tertiary' style={{ color: "#817d7d" }}>${calculateUpdatedPrice(item)}</td>
                    <td style={{ color: "#817d7d" }}>
-                     <AiOutlineDelete onClick={()=> handleRemoveFromCart(index)}/>
+                     <AiOutlineDelete onClick={()=> handleRemoveFromCart(index)} style={{cursor:"pointer"}}/>
                    </td>
                  </tr>
                ))}
