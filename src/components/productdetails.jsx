@@ -61,7 +61,8 @@ const Details = ({cartItem, setCartItem}) => {
           <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay>
             {product.photos && product.photos.map((photo, index) => (
               <div key={index}>
-                <img src={`/api/images/${photo.url}`} alt={product.name} className='img-fluid' width={'200px'} height={'400px'} />
+                {/* <img src={`/api/images/${photo.url}`} alt={product.name} className='img-fluid' width={'200px'} height={'400px'} /> */}
+                <img src={`https://api.timbu.cloud/images/${product?.photos[0]?.url}`} alt={product.name} className='img-fluid' width={'200px'} height={'400px'} />
               </div>
             ))}
           </Carousel>

@@ -98,9 +98,9 @@ text-align: left;
   .table .quantity{
     display: none;
   }
-  .x2{
+  /* .x2{
     display: inline-block;
-  }
+  } */
   #giftCard, #paymentMethod{
     width: 80% !important;
   }
@@ -155,4 +155,7 @@ text-align: left;
 a {
   text-decoration: none !important;
   color: inherit !important;
+}
+.paystackbut{
+  background-color: #FF5C00 !important;
 }

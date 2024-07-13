@@ -3,9 +3,10 @@ import '../css/header1.css'
 import { IoCartOutline } from "react-icons/io5";
 import { GiHamburgerMenu,  } from "react-icons/gi";
 import { Navbar, Nav, Container, FormControl, Form,InputGroup,Button } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+
 import logo from '../assets/images/logo.png'
 import { CiSearch } from "react-icons/ci";
+import { Link } from "react-router-dom";
 export const HeaderOne = ({cartItem}) => {
   const cartItemcount = cartItem.length
     return(
@@ -33,12 +34,12 @@ export const HeaderOne = ({cartItem}) => {
   </InputGroup>
 </Form>
     <Nav className="d-lg-none d-flex justify-content-end">
-      <Nav.Link href="/cart"  className="nav-link">
+      <Nav.Link   className="nav-link">
       <div className="carticon ">
-    
+       <Link to={'/cart'}>
           <IoCartOutline  className="cartout"/>
           <span className="count">{cartItemcount}</span>
-       
+       </Link>
           </div>
       </Nav.Link>
     </Nav>

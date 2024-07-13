@@ -31,7 +31,7 @@ export const Checkout = ({ cartItem, setCartItem }) => {
   const paystackProps =  {
     email,
     amount: totalAmount,
-    publicKey: 'pk_test_9f04ff1cdc541872fbbdb8816c9057d2b6c883a5',
+    publicKey: 'pk_test_15ecd67b8e01212bcb121f80203606ecee45a74b',
     text: "Pay Now",
     onSuccess: (response) => {
       let message = 'Payment complete! Reference: ' + response.reference;
@@ -188,7 +188,7 @@ export const Checkout = ({ cartItem, setCartItem }) => {
         <div className="d-flex justify-content-center">
           <PaystackButton
            {...paystackProps}
-            className="btn submit"
+            className="btn submit paystackbut"
             style={{ backgroundColor: '#FF5C00', color: "white" }}
           />
         </div>
