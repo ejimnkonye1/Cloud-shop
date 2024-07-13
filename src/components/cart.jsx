@@ -112,7 +112,7 @@ export const Cart = ({cartItem,setCartItem}) => {
                  <tr key={index}>
                    <td>
                  
-                   <img src={`/api/images/${item.photos[0]?.url}`} width="50px" height="50px" />
+                   <img src={`https://api.timbu.cloud/images/${item.photos[0]?.url}`} width="50px" height="50px" />
                      <span style={{ marginLeft: '10px', color: "#817d7d" }}>{item.name} <span className='x2'>x2</span></span>
                    </td>
                    <td>
