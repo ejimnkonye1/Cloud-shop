@@ -60,9 +60,10 @@ export const Cart = ({cartItem,setCartItem}) => {
   useEffect(() => {
     // Retrieve cart items from localStorage when the component mounts
     const storedCartItems = JSON.parse(localStorage.getItem('cartItem')) || [];
-    setCartItem(storedCartItems);
-  }, []);
-
+    if (!cartItem.length) {
+      setCartItem(storedCartItems);
+    }
+  }, [setCartItem]);
   useEffect(() => {
     // Update localStorage whenever cartItems change
     localStorage.setItem('cartItem', JSON.stringify(cartItem));
