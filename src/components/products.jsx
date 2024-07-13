@@ -68,13 +68,15 @@ export const Products = ({cartItem, setCartItem}) => {
       existingProduct.quantity += 1;
       setCartItem([...cartItem]);
       console.log({cartItem})
-      navigate('/cart')
+      // navigate('/cart')
+      alert('item added')
     } else {
 
       product.quantity = 1;
       setCartItem([...cartItem, product]);
       console.log({cartItem})
-      navigate('/cart')
+      // navigate('/cart')
+      alert('item added')
     }
   };
   return (
