@@ -12,7 +12,7 @@ const Details = ({cartItem, setCartItem}) => {
   const [product, setProduct] = useState({});
  
   const [quantity, setQuantity] = useState(1);
-
+  const [photos, setPhotos] = useState([]);
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -24,7 +24,10 @@ const Details = ({cartItem, setCartItem}) => {
           }
         });
         setProduct(response.data);
-        console.log(response.data.photos)
+        setPhotos(response.data.photos)
+        console.log(JSON.stringify(response.data.photos, null, 2))
+        const photos = response.data.photos;
+  console.log(photos.map(photo => `<img src="${photo.url}" width="100" />`).join(''));
       } catch (error) {
         console.error(error);
       }
@@ -51,20 +54,27 @@ const Details = ({cartItem, setCartItem}) => {
       navigate('/cart')
     }
   };
+  console.log(product.photos);
+  console.log('image',JSON.stringify(product.photos, null, 2))
 
   return (
     <div className="product-details">
-      {product.image && <img src={product.image} alt={product.name} />}
+      {/* {product.image && <img src={product.image} alt={product.name} />} */}
 
       <div className="product-page">
         <div className="carousel-container">
           <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay>
-            {product.photos && product.photos.map((photo, index) => (
+          {photos.map((photo, index) => (
               <div key={index}>
-                {/* <img src={`/api/images/${photo.url}`} alt={product.name} className='img-fluid' width={'200px'} height={'400px'} /> */}
-                <img src={`https://api.timbu.cloud/images/${product?.photos[0]?.url}`} alt={product.name} className='img-fluid' width={'200px'} height={'400px'} />
+                <img src={`https://api.timbu.cloud/images/${photo.url}`} alt={product.name} className='img-fluid' width={'200px'} height={'400px'} />
               </div>
             ))}
+            {/* {product.photos && product.photos.map((photo, index) => (
+              <div key={index}>
+                <img src={`/api/images/${photo.url}`} alt={product.name} className='img-fluid' width={'200px'} height={'400px'} />
+                <img src={`https://api.timbu.cloud/images/${product?.photos[0]?.url}`} alt={product.name} className='img-fluid' width={'200px'} height={'400px'} />
+              </div>
+            ))} */}
           </Carousel>
         </div>
         <div className="product-info">

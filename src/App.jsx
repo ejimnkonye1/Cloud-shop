@@ -15,7 +15,7 @@ import { Bottom } from './components/bottom'
 import { Ads } from './components/ads'
 import { BG } from './components/bg'
 import Details from './components/productdetails'
-import ConfirmPayment from './components/confirm'
+
 const App = () => {
   const [cartItem,setCartItem] = useState([]) 
   return(
