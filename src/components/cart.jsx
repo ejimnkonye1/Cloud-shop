@@ -108,37 +108,35 @@ export const Cart = ({cartItem,setCartItem}) => {
                </tr>
              </thead>
              <tbody>
-               {cartItem.map((item, index) => (
-                 <tr key={index}>
-                   <td>
-                 
-                   <img src={`https://api.timbu.cloud/images/${item.photos[0]?.url}`} width="50px" height="50px" />
-                     <span style={{ marginLeft: '10px', color: "#817d7d" }}>{item.name} <span className='x2'>x2</span></span>
-                   </td>
-                   <td>
-                     <div className="d-flex align-items-center mb-2 border" style={{ width: '120px', cursor: 'pointer' }}>
-                       <div className="border px-3 bg-body-tertiary p-1">
-                         <FiMinus onClick={() => updateQuantity(index,- 1)} />
-                       </div>
-                       <div className="form-outline text-center" style={{ flex: '1' }}>
-                         <strong>{item.quantity}</strong>
-                       </div>
-                       <div className="border px-3 bg-body-tertiary p-1">
-                         <FiPlus onClick={() => updateQuantity(index,+ 1)} />
-                       </div>
-                     </div>
-                   </td>
-                   <td style={{ color: '#FF5C00' }}>
-                     $
-                     {item.current_price[0].NGN[0]}
-                   </td>
-                   <td className='text-tertiary' style={{ color: "#817d7d" }}>${calculateUpdatedPrice(item)}</td>
-                   <td style={{ color: "#817d7d" }}>
-                     <AiOutlineDelete onClick={()=> handleRemoveFromCart(index)} style={{cursor:"pointer"}}/>
-                   </td>
-                 </tr>
-               ))}
-             </tbody>
+  {cartItem.map((item, index) => (
+    <tr key={index}>
+      <td>
+        <img src={`https://api.timbu.cloud/images/${item.photos[0]?.url}`} width="50px" height="50px" />
+        <span style={{ marginLeft: '10px', color: "#817d7d" }}>{item.name} <span className='x2'>x2</span></span>
+      </td>
+      <td>
+        <div className="d-flex align-items-center mb-2 border" style={{ width: '120px', cursor: 'pointer' }}>
+          <div className="border px-3 bg-body-tertiary p-1">
+            <FiMinus onClick={() => updateQuantity(index, -1)} />
+          </div>
+          <div className="form-outline text-center" style={{ flex: '1' }}>
+            <strong>{item.quantity}</strong>
+          </div>
+          <div className="border px-3 bg-body-tertiary p-1">
+            <FiPlus onClick={() => updateQuantity(index, +1)} />
+          </div>
+        </div>
+      </td>
+      <td style={{ color: '#FF5C00' }}>
+        ${item.current_price[0].NGN[0]}
+      </td>
+      <td className='text-tertiary' style={{ color: "#817d7d" }}>${calculateUpdatedPrice(item)}</td>
+      <td style={{ color: "#817d7d" }}>
+        <AiOutlineDelete onClick={() => handleRemoveFromCart(index)} style={{ cursor: "pointer" }} />
+      </td>
+    </tr>
+  ))}
+</tbody>
            </table>
          </div>
        </div>
