@@ -96,7 +96,7 @@ export const Products = ({cartItem, setCartItem}) => {
               <div className="">
                 <div className='pro'>
                   <Link to={`/details/${product.id}`}> 
-                    <img src={`/api/images/${product.photos[0]?.url}`} alt={product.name} 
+                  <img src={`https://api.timbu.cloud/images/${product?.photos[0]?.url}`} alt={product.name} 
                       style={{ width: '100%', height: '250px', padding: '20px' }} 
                       className={`card-img-top ${index === 0? 'indicator' : ''}`} 
                     />
