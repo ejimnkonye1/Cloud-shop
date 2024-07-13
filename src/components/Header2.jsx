@@ -6,8 +6,10 @@ import '../css/header2.css'
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useEffect , useState} from "react";
-export const HeaderTwo = () => {
+export const HeaderTwo = ({cartItem}) => {
   const [show, setShow] = useState(true);
+  const cartItemcount = cartItem.length
+console.log('cartcount:', cartItemcount)
   useEffect(() => {
    
     setShow(true);
@@ -15,8 +17,8 @@ export const HeaderTwo = () => {
     return(
       
 <div className="contai" style={{backgroundColor:'#FF5C00 '}}>
-<nav class="navbar navbar-expand-lg d-none d-sm-none d-lg-block">
-        <div class="container">
+<nav className="navbar navbar-expand-lg d-none d-sm-none d-lg-block">
+        <div className="container">
       
         <div className="dropdown navbar-brand">
             <Dropdown >
@@ -42,7 +44,7 @@ export const HeaderTwo = () => {
       
 
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <form className="d-flex align-items-center">
   <div className="input-group">
     <span className="input-group-text">
@@ -67,7 +69,7 @@ export const HeaderTwo = () => {
           <div className="carticon ">
             <Link to='/cart'>
             <IoCartOutline  className="cartout"/>
-          <span className="count">2</span>
+          <span className="count">{cartItemcount}</span>
           </Link>
           </div>
           

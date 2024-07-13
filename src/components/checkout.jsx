@@ -1,11 +1,66 @@
-import { useNavigate } from "react-router-dom"
+import React,{useEffect} from "react";
+import { useNavigate} from "react-router-dom"
 import { FiPlus, FiMinus } from 'react-icons/fi';
 import img from '../assets/images/Card.png'
-export const Checkout = () => {
+import { useState } from "react";
+export const Checkout = ({cartItem, setCartItem}) => {
+  const [name, setName] = useState()
+  useEffect(() => {
+    // Retrieve cart items from localStorage when the component mounts
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItem')) || [];
+    setCartItem(storedCartItems);
+  }, []);
+
+  useEffect(() => {
+    // Update localStorage whenever cartItems change
+    localStorage.setItem('cartItem', JSON.stringify(cartItem));
+  }, [cartItem]);
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+    for (const item of cartItem) {
+      totalPrice += parseFloat(item.price) * item.quantity;
+    }
+    return totalPrice.toFixed(0);
+  };
+
+
     const navigate  = useNavigate()
-    const onsubmit = () => {
-        alert('payment successful check ur email for your order details')
-        // navigate('/')
+    const payWithPaystack = (e) => {
+      e.preventDefault();
+    
+      if (window.PaystackPop) {
+        // PaystackPop is available, proceed with the payment logic
+        let handler = window.PaystackPop.setup({
+          key: 'pk_test_9f04ff1cdc541872fbbdb8816c9057d2b6c883a5', // Replace with your public key
+          email: name,
+       
+          currency: 'NGN',
+          amount: calculateTotalPrice() * 100,
+          ref: '' + Math.floor(Math.random() * 1000000000 + 1),
+          onClose: function () {
+            alert('Window closed.');
+          },
+          callback: function (response) {
+            let message = 'Payment complete! Reference: ' + response.reference;
+            alert(message);
+                
+          setCartItem([]);
+          localStorage.removeItem('cartItems');
+          navigate('/')
+      
+          },
+        });
+    
+        handler.openIframe();
+      } else {
+        // Handle the case where PaystackPop is not available
+        console.error('PaystackPop is not available');
+      }
+    };
+    const Handlesubmit = () => {
+      console.log('Payment form submitted');
+      payWithPaystack()
+
     }
     return(
         <div className="container mt-5 mb-4">
@@ -15,7 +70,7 @@ export const Checkout = () => {
     <li className="breadcrumb-item active" aria-current="page">Checkout</li>
   </ol>
 </nav>
-        <form onsubmit={onsubmit}>
+        <form onSubmit={Handlesubmit}>
      
         <div className="mb-3">
         <label htmlFor="country" className="form-label">Country</label>
@@ -29,7 +84,9 @@ export const Checkout = () => {
           <div className="row mb-3" >
             <div className="col-md-12">
               <label htmlFor="firstName" className="form-label">Full Name (first and last name)</label>
-              <input type="text" className="form-control" id="firstName" placeholder="Hailey Shipman" required />
+              <input type="text" className="form-control" id="firstName" 
+              onChange={(e)=> setName(e.target.value)}
+              placeholder="Hailey Shipman" required />
             </div>
           </div>
           <div className="mb-3">

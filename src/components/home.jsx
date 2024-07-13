@@ -4,7 +4,7 @@ import img from '../assets/images/home.png'
 export const HomeImg = () => {
     return(
         <div className="main row">
-    <div class="triangle col-6">
+    <div className="triangle col-6">
     <span className="triangle-text">Phones <span className="tab">&  Tablets</span></span>
     </div>
     <div className="col-6 im">

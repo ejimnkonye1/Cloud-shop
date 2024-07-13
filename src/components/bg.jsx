@@ -1,6 +1,6 @@
 export const BG = () => {
     return(
-    <div class="web-only-bg"></div>
+    <div className="web-only-bg"></div>
 
     )
 }

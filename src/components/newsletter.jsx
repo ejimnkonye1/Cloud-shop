@@ -2,16 +2,16 @@
 import '../css/newsletter.css'
 export const NewsLetter = () => {
     return(
-        <section class="newsletter">
-<div class="container">
-<div class="row">
-<div class="col-sm-12">
-	<div class="content">
+        <section className="newsletter">
+<div className="container">
+<div className="row">
+<div className="col-sm-12">
+	<div className="content">
 		<p>Subscribe to our Newsletters for updates on on our services and exclusive offer</p>
-	<div class="input-group">
-         <input type="email" class="form-control" placeholder="Enter your email" />
-         <span class="input-group-btn">
-         <button class="btn" type="submit">Subscribe</button>
+	<div className="input-group">
+         <input type="email" className="form-control" placeholder="Enter your email" />
+         <span className="input-group-btn">
+         <button className="btn" type="submit">Subscribe</button>
          </span>
           </div>
 	</div>

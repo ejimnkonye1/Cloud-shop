@@ -6,7 +6,8 @@ import { Navbar, Nav, Container, FormControl, Form,InputGroup,Button } from 'rea
 import { Link } from "react-router-dom";
 import logo from '../assets/images/logo.png'
 import { CiSearch } from "react-icons/ci";
-export const HeaderOne = () => {
+export const HeaderOne = ({cartItem}) => {
+  const cartItemcount = cartItem.length
     return(
       <Navbar bg=" sm-light" expand="lg">
   <Container>
@@ -32,12 +33,12 @@ export const HeaderOne = () => {
   </InputGroup>
 </Form>
     <Nav className="d-lg-none d-flex justify-content-end">
-      <Nav.Link href="#" className="nav-link">
+      <Nav.Link href="/cart"  className="nav-link">
       <div className="carticon ">
-      <Link to='/cart' style={{ textDecoration: 'none' }}>
+    
           <IoCartOutline  className="cartout"/>
-          <span className="count">2</span>
-          </Link>
+          <span className="count">{cartItemcount}</span>
+       
           </div>
       </Nav.Link>
     </Nav>

@@ -14,24 +14,26 @@ import { HomeImg } from './components/home'
 import { Bottom } from './components/bottom'
 import { Ads } from './components/ads'
 import { BG } from './components/bg'
+import Details from './components/productdetails'
 const App = () => {
   const [cartItem,setCartItem] = useState([]) 
   return(
-    <div>
+    <div className=''>
  <Router>
   <BG />
-  <HeaderOne />
-  <HeaderTwo />
+  <HeaderOne  cartItem={cartItem}/>
+  <HeaderTwo cartItem={cartItem} />
   {/* <Ads /> */}
   {/* <HomeImg /> */}
       <Routes>
         
         <Route path='/' element={<Products cartItem={cartItem} setCartItem={setCartItem} />} />
         <Route path='/cart' element={<Cart cartItem={cartItem} setCartItem={setCartItem} />} />
-        <Route path='/checkout' element={<Checkout/>} />
+        <Route path='/checkout' element={<Checkout cartItem={cartItem} setCartItem={setCartItem}/>} />
+        <Route path='/details/:id' element={<Details />} />
       </Routes>
       <Footer />
-      <Bottom />
+      <Bottom cartItem={cartItem} />
     </Router>
     </div>
   )

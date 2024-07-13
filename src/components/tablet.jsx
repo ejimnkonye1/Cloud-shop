@@ -3,12 +3,28 @@ import img from '../assets/images/stock.png';
 import tabletImg from './tabletimg';
 import { useNavigate } from 'react-router-dom';
 import  img1 from '../assets/images/New.png'
-export const Tablet = () => {
+import { Link } from 'react-router-dom';
+export const Tablet = ({cartItem, setCartItem}) => {
   const navigate = useNavigate()
 
-  const handleCartPage = () => {
-    navigate('/cart')
-  }
+  const handleAddToCart = (product) => {
+
+    const existingProduct = cartItem.find((item) => item.name === product.name);
+
+    if (existingProduct) {
+
+      existingProduct.quantity += 1;
+      setCartItem([...cartItem]);
+      console.log({cartItem})
+      navigate('/cart')
+    } else {
+
+      product.quantity = 1;
+      setCartItem([...cartItem, product]);
+      console.log({cartItem})
+      navigate('/cart')
+    }
+  };
   return (
     <div className="container">
       <h6 className='mt-4 mb-4'>Tablets</h6>
@@ -18,10 +34,12 @@ export const Tablet = () => {
           <div className="col-6 col-md-3 col-sm-6 mb-4" key={product.id}>
             <div className="">
             <div className='pro'>
+            <Link to={`/details/${product.id}`}> 
         <img src={product.image} 
           style={{ width: '100%', height: '250px', padding: '20px' }} 
           className={`card-img-top ${index === 0 ? 'indicator' : ''}`} 
           alt={product.name} />
+          </Link>
         {index === 3 && (
           <span className="indicator-badge">
             <img src={img1} width={'30px'} />
@@ -38,7 +56,7 @@ export const Tablet = () => {
                 <p className="card-text text-dark text-center">${product.price}</p>
                 <div className='d-flex justify-content-center'>
                   <button
-                  onClick={handleCartPage}
+                  onClick={() => handleAddToCart(product)}
                   className='btn-sm rounded btn btn-dark' >
                     Add to cart
                   </button>

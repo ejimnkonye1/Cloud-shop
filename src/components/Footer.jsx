@@ -9,26 +9,26 @@ import img from '../assets/images/logo.png'
 export const Footer = () => {
     return(
        
-<footer class="text-center text-lg-start footer  bg-body-dark text-muted" style={{backgroundColor:'black',}}>
+<footer className="text-center text-lg-start footer  bg-body-dark text-muted" style={{backgroundColor:'black',}}>
 
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 ">
+  <section className="d-flex justify-content-center justify-content-lg-between p-4 ">
    
   
   
   
   </section>
 
-  <section class="text-white">
-    <div class="container text-center text-md-start mt-5">
+  <section className="text-white">
+    <div className="container text-center text-md-start mt-5">
     
-    <div class="row mt-3">
-  <div class="col-md-1 col-lg-1 col-xl-1 mx-auto mt-2 ">
+    <div className="row mt-3">
+  <div className="col-md-1 col-lg-1 col-xl-1 mx-auto mt-2 ">
     <img src={img} style={{ width: '100px', height: '100px' }} />
    
   
   </div>
-  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-    <h6 class="text-uppercase fw-bold mb-4">
+  <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+    <h6 className="text-uppercase fw-bold mb-4">
       Contact
     </h6>
     <p>
@@ -41,25 +41,25 @@ export const Footer = () => {
       <CiMail /> Adhil_Ellen@gmail.com
     </p>
   </div>
-  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" >
-    <h6 class="text-uppercase fw-bold mb-4">
+  <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" >
+    <h6 className="text-uppercase fw-bold mb-4">
       Quick Links
     </h6>
     <p>
-      <a href="#!" class="text-reset" >About Us</a>
+      <a href="#!" className="text-reset" >About Us</a>
     </p>
     <p>
-      <a href="#!" class="text-reset">Blog</a>
+      <a href="#!" className="text-reset">Blog</a>
     </p>
     <p>
-      <a href="#!" class="text-reset">Shop</a>
+      <a href="#!" className="text-reset">Shop</a>
     </p>
     <p>
-      <a href="#!" class="text-reset">Contact Us</a>
+      <a href="#!" className="text-reset">Contact Us</a>
     </p>
   </div>
-  <div class="col-md-3 col-lg-2 col-xl-2 text-white mx-auto mb-4">
-    <h6 class="text-uppercase text-white fw-bold mb-4">
+  <div className="col-md-3 col-lg-2 col-xl-2 text-white mx-auto mb-4">
+    <h6 className="text-uppercase text-white fw-bold mb-4">
       Follow Us On
     </h6>
     <p>
@@ -75,13 +75,13 @@ export const Footer = () => {
       <FaTiktok  style={{color:"red"}}/> Tiktok
     </p>
   </div>
-  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-    <h6 class="text-uppercase fw-bold mb-4">Policies</h6>
+  <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+    <h6 className="text-uppercase fw-bold mb-4">Policies</h6>
     <p>
-      <a href="#!" class="text-reset">Privacy policy</a>
+      <a href="#!" className="text-reset">Privacy policy</a>
     </p>
     <p>
-      <a href="#!" class="text-reset">Terms of Service</a>
+      <a href="#!" className="text-reset">Terms of Service</a>
     </p>
   </div>
 </div>
@@ -90,7 +90,7 @@ export const Footer = () => {
   </section>
  
 
-  <div class="text-center text-white p-4" >
+  <div className="text-center text-white p-4" >
   Hilzella © 2024 All rights reserved
   </div>
 

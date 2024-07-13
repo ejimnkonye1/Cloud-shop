@@ -4,7 +4,8 @@ import { FiMessageSquare } from "react-icons/fi";
 import { IoHomeOutline } from "react-icons/io5";
 import img from '../assets/images/bi.jpg'
 import { Link } from 'react-router-dom';
-export const Bottom = () => {
+export const Bottom = ({cartItem}) => {
+  const cartItemcount = cartItem.length
     return(
    
     <nav className="navbar fixed-bottom navbar-expand-md navbar-light bg-light d-md-none">
@@ -28,7 +29,7 @@ export const Bottom = () => {
           <div className="carticon ">
           <Link to='/cart'>
           <IoCartOutline  className="cartout"/>
-          <span className="count">2</span>
+          <span className="count">{cartItemcount}</span>
           </Link>
           </div>
           </div>
