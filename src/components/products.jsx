@@ -12,7 +12,8 @@ import axios from 'axios';
 import Test from './test';
 import { Link } from 'react-router-dom';
 import CustomPagination from './page';
-
+import ColorAlerts from './alert';
+import Alert from '@mui/material/Alert';
 export const Products = ({cartItem, setCartItem}) => {
   const navigate = useNavigate()
   const [products, setProducts] = useState([])
@@ -23,6 +24,7 @@ export const Products = ({cartItem, setCartItem}) => {
   const appId = 'KMHXJZQFPWEQVPG';
   const organizationId = '3da1426372a84aa9a326fc25e5676e72';
   const apiKey = '5ce287134d97472ebf05871059390c5920240712123655231083';
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -75,7 +77,13 @@ export const Products = ({cartItem, setCartItem}) => {
       // navigate('/cart')
       console.log('New product added:', product);
       console.log('Updated cart items:', cartItem);
-      alert('item added');
+      setShowToast(true);
+
+      // Hide the toast after a delay (adjust as needed)
+      setTimeout(() => {
+        setShowToast(false);
+      }, 1000);
+
     }
   };
   return (
@@ -84,7 +92,12 @@ export const Products = ({cartItem, setCartItem}) => {
       <div className='d-none d-lg-block'>
         <HomeImg />
       </div>
+      {showToast && (
+     <div className="custom-toast">
+      <ColorAlerts />
 
+   </div>
+  )} 
       <div className="container">
         <h6 className='mt-4 mb-4 '>TOP PRODUCTS</h6>
         <div className='border-bottom'></div>
@@ -118,7 +131,7 @@ export const Products = ({cartItem, setCartItem}) => {
                   <div className='d-flex justify-content-center'>
                     <button
             
-                      className='cart-button btn-sm rounded btn btn-dark'
+                      className='cart-button btn-sm rounded btn btn-dark' id="liveToastBtn"
                       onClick={()=>handleAddToCart(product)}
                       >
                       Add to cart
