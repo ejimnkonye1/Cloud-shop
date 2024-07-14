@@ -2,7 +2,7 @@
 import '../css/newsletter.css'
 export const NewsLetter = () => {
     return(
-        <section className="newsletter">
+        <section className="newsletter d-none d-sm-none d-lg-block">
 <div className="container">
 <div className="row">
 <div className="col-sm-12">

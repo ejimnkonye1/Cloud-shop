@@ -15,6 +15,7 @@ import { Bottom } from './components/bottom'
 import { Ads } from './components/ads'
 import { BG } from './components/bg'
 import Details from './components/productdetails'
+import { NewsLetter } from './components/newsletter'
 
 const App = () => {
   const [cartItem,setCartItem] = useState([]) 
@@ -35,6 +36,7 @@ const App = () => {
 
 
       </Routes>
+      <NewsLetter />
       <Footer />
       <Bottom cartItem={cartItem} />
     </Router>

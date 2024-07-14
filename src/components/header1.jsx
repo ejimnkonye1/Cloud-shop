@@ -17,7 +17,7 @@ export const HeaderOne = ({cartItem}) => {
     </Navbar.Toggle>
     <Navbar.Brand href="#" className="logo d-lg-block d-none">
   <div className="logo-container">
-    <img src={logo} alt="Hilzella Logo" width="50" height="50" />
+    <img src={logo} alt="Hilzella Logo" className="logo-img" width="50" height="50" />
     <span className="logo-text">HILZELLA</span>
   </div>
 </Navbar.Brand>

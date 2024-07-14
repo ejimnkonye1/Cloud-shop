@@ -16,7 +16,7 @@ console.log('cartcount:', cartItemcount)
   }, []);
     return(
       
-<div className="contai" style={{backgroundColor:'#FF5C00 '}}>
+<div className="contai" style={{backgroundColor:'#FF5C00 ', height:''}}>
 <nav className="navbar navbar-expand-lg d-none d-sm-none d-lg-block">
         <div className="container">
       
@@ -24,7 +24,7 @@ console.log('cartcount:', cartItemcount)
             <Dropdown >
             <Dropdown.Toggle as="div" className="custom-dropdown-toggle nocaret">
   <button className="btn btn-dark" type="button">
-    <GiHamburgerMenu /> Categories
+    <GiHamburgerMenu /> <span className="cat">Categories</span>
   </button>
    </Dropdown.Toggle>
 
@@ -46,15 +46,21 @@ console.log('cartcount:', cartItemcount)
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <form className="d-flex align-items-center">
+<div className="search-container">
+  <CiSearch className="search-icon" />
+
+  <input 
+    type="search"
+    className="form-control search-key" 
+    placeholder="Enter your keyword" 
+    aria-label="Search" 
+  />
   <div className="input-group">
-    <span className="input-group-text">
-      <CiSearch />
-    </span>
-    <input type="search"
-    style={{width:'400px'}}
-    className="form-control border-0" placeholder="Enter your keyword" aria-label="Search" />
-    <button className="btn btn-dark" type="submit">Search</button>
+  <button className="btn btn-dark search-btn " type="submit">Search</button>
   </div>
+
+</div>
+
 
 </form>
 

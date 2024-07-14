@@ -5,20 +5,36 @@ font-style: italic;
 font-weight: 800;
 /* line-height: 67.5px; */
 text-align: left;
+height: 50px;
 
 }
+.logo-text{
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 800;
+}
 .nav-link  {
-    font-family: Poppins;
+   font-family: Poppins;
 font-size: 24px;
 font-weight: 800;
 /* line-height: 48px; */
 text-align: left;
 margin-left: 90px;
+
+}
+.nav-css .nav-link{
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 400;
 }
 .logo-container {
     position: relative;
   }
-  
+  .logo-img{
+    
+   /* max-height: 100px; */
+    
+  }
   .logo-text {
     position: absolute;
     top: 50%;

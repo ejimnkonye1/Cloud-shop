@@ -26,9 +26,11 @@ export const Checkout = ({ cartItem, setCartItem }) => {
     return totalPrice.toFixed(0);
   };
 
+
   const totalAmount = calculateTotalPrice() * 100; // Paystack expects the amount in kobo
 
   const paystackProps =  {
+   
     email,
     amount: totalAmount,
     publicKey: 'pk_test_15ecd67b8e01212bcb121f80203606ecee45a74b',
@@ -186,11 +188,11 @@ export const Checkout = ({ cartItem, setCartItem }) => {
 
 
         <div className="d-flex justify-content-center">
-          <PaystackButton
+          <PaystackButton 
            {...paystackProps}
             className="btn submit paystackbut"
             style={{ backgroundColor: '#FF5C00', color: "white" }}
-          />
+          /> 
         </div>
       </form>
     </div>

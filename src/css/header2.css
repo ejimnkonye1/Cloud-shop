@@ -36,4 +36,46 @@
   .nocaret::after {
     display: none !important;
   }
+  .custom-dropdown-toggle{
+    
+   
+  }
+  .cat{
+    font-size: 25px;
+    font-weight: 600;
+    font-family: poppins;
+   position: relative;
+   top: 3px;
+  }
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 40%;
+    width: 500px;
+  }
   
+  .search-icon {
+    position: absolute;
+    left: 20px; 
+    pointer-events: none;
+  }
+  
+  .search-key {
+    padding-left: 30px; 
+    width: 400px; 
+    border-radius: 10px !important ;
+    
+  }
+  .search-key::placeholder {
+    color: #888; 
+    font-size: 14px; 
+    position: absolute;
+    left: 80px;
+    top: 6px;
+  }
+  .search-btn {
+    margin-left: -3px; 
+    /* height: 100%;  */
+    border-radius: 0px !important ;
+  }

@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
-
 import { NewsLetter } from './newsletter';
 import img from '../assets/images/stock.png';
-import { Phone } from './phone';
-import { Tablet } from './tablet';
 import { HomeImg } from './home';
 import { useNavigate } from 'react-router-dom';
 import { Ads } from './ads';
 import  img1 from '../assets/images/New.png'
 import axios from 'axios';
-import Test from './test';
 import { Link } from 'react-router-dom';
 import CustomPagination from './page';
 import ColorAlerts from './alert';
-import Alert from '@mui/material/Alert';
+
 export const Products = ({cartItem, setCartItem}) => {
   const navigate = useNavigate()
   const [products, setProducts] = useState([])
@@ -86,6 +82,8 @@ export const Products = ({cartItem, setCartItem}) => {
 
     }
   };
+  
+  
   return (
     <section>
       <Ads />
@@ -98,7 +96,7 @@ export const Products = ({cartItem, setCartItem}) => {
 
    </div>
   )} 
-      <div className="container">
+      <div className="container ">
         <h6 className='mt-4 mb-4 '>TOP PRODUCTS</h6>
         <div className='border-bottom'></div>
         {products.length === 0 ? (
@@ -152,11 +150,6 @@ export const Products = ({cartItem, setCartItem}) => {
             
           />
         </div>
-        
-        {/* <Phone />
-        <Tablet cartItem={cartItem} setCartItem={setCartItem} /> */}
-        <NewsLetter />
-        {/* <Test /> */}
       </div>
     </section>
   );
