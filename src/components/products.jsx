@@ -29,7 +29,7 @@ export const Products = ({cartItem, setCartItem}) => {
     const fetchProducts = async () => {
       try {
         
-        const response = await fetch(`api/products?organization_id=${organizationId}&Appid=${appId}&Apikey=${apiKey}`);
+        const response = await fetch(`https://timbu-get-all-products.reavdev.workers.dev/?organization_id=${organizationId}&Appid=${appId}&Apikey=${apiKey}`);
         // const response = await fetch(`api/products?organization_id=${organizationId}&Appid=${appId}&Apikey=${apiKey}`);
         const data = await response.json();
         setProducts(data.items);
