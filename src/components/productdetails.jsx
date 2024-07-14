@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../css/productdetails.css'
 import img from '../assets/images/1.jpg'
-import ColorAlerts from './alert';
+
 const Details = ({cartItem, setCartItem}) => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -13,7 +13,6 @@ const Details = ({cartItem, setCartItem}) => {
  
   const [quantity, setQuantity] = useState(1);
   const [photos, setPhotos] = useState([]);
-  const [showToast, setShowToast] = useState(false);
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -47,52 +46,21 @@ const Details = ({cartItem, setCartItem}) => {
       existingProduct.quantity += quantity;
       setCartItem([...cartItem]);
       console.log({ cartItem })
-      setShowToast(true);
-
-      // Hide the toast after a delay (adjust as needed)
-      setTimeout(() => {
-        setShowToast(false);
-      }, 1000);
-
-    
+      navigate('/cart')
     } else {
       product.quantity = quantity;
       setCartItem([...cartItem, product]);
       console.log({ cartItem })
-      setShowToast(true);
-
-      // Hide the toast after a delay (adjust as needed)
-      setTimeout(() => {
-        setShowToast(false);
-      }, 1000);
-
-    
-    
+      navigate('/cart')
     }
   };
   console.log(product.photos);
   console.log('image',JSON.stringify(product.photos, null, 2))
-  const formatPrice = price => {
-    if (typeof price === 'number') {
-      // Convert price to string and then match digits
-      const priceString = price.toString();
-      const regex = /[0-9]+/;
-      const match = priceString.match(regex);
-      return match ? parseInt(match[0]) : 'Price not available'; // Parsing as integer, adjust as needed
-    } else {
-      return 'Price not available';
-    }
-  };
-  
+
   return (
     <div className="product-details">
       {/* {product.image && <img src={product.image} alt={product.name} />} */}
-      {showToast && (
-     <div className="custom-toast">
-      <ColorAlerts />
 
-   </div>
-  )} 
       <div className="product-page">
         <div className="carousel-container">
           <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay>
@@ -111,7 +79,7 @@ const Details = ({cartItem, setCartItem}) => {
         </div>
         <div className="product-info">
           <h1 className="product-name">{product.name}</h1>
-        {product.current_price && <p className="product-price">${formatPrice(product.current_price)}</p>}
+        {product.current_price && <p className="product-price">${product?.current_price}</p>}
 
           <p className="product-description">{product.description} </p>
 
